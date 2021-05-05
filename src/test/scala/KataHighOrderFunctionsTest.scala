@@ -5,7 +5,7 @@ import org.scalatest.junit.JUnitRunner
 // hof : high order function
 
 trait HofTestTrait {
-  val hof = KataHighOrderFunctions
+  def hof = KataHighOrderFunctions
 }
 
 @RunWith(classOf[JUnitRunner])
@@ -18,25 +18,25 @@ class DoubleListTest extends FunSuite with HofTestTrait {
     val b = 4
 
     //WHEN
-    val result = hof.sumCubes(a,b)
+    val result = hof.sumCubes(a, b)
 
     //THEN
 
-    assert(result == (2*2*2 + 3*3*3 + 4*4*4))
+    assert(result == (2 * 2 * 2 + 3 * 3 * 3 + 4 * 4 * 4))
 
   }
 
 
   test("double_elements_in_list") {
     //GIVEN
-    val l = List(2,4,5)
+    val l = List(2, 4, 5)
 
     //WHEN
     val result = hof.DoubleList(DoubleValue = Int => Int, l = l)
 
     //THEN
 
-    assert(result == List(4,8,10))
+    assert(result == List(4, 8, 10))
 
   }
 
@@ -52,9 +52,11 @@ class DoubleListTest extends FunSuite with HofTestTrait {
 
     //THEN
 
-    val expected = (5*2.5 + 10*3.5)*0.5
+    val expected = (5 * 2.5 + 10 * 3.5) * 0.5
 
     assert(result == expected)
 
   }
+
+}
 
